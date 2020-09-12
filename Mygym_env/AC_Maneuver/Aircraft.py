@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# six-dof computation toolbox
+# Airframe model
 
 # author: tolshao
 # 2020-09-10 20:14:13
@@ -9,6 +9,10 @@ import numpy as np
 
 class Aircraft(object):
     def __init__(self, states0: float, Tsc=0.02, RK4=False):
+        # Env paprameters
+        self.Tsc = Tsc
+        self.RK4 = RK4
+
         # Aircraft parameters
         self.mass = 9259.44
         Ixx = 12874.8
@@ -20,10 +24,6 @@ class Aircraft(object):
         self.inertia = np.matrix(
             [[Ixx, -Ixy, -Ixz], [-Ixy, Iyy, -Iyz], [-Ixz, -Iyz, Izz]])
         self.Inv_inertia = self.inertia.I
-
-        # Env paprameters
-        self.Tsc = Tsc
-        self.RK4 = RK4
 
         # State variables of C.G. of AC
         x, vel, euler, ang_vel = states0
@@ -57,6 +57,8 @@ class Aircraft(object):
         self.euler += self.DotEuler_get() * self.Tsc
 
     def IntRK4(self):
+        # TODO: RK4 提高积分精度
+        # self.RK4ForOne()
         return False
 
     # def RK4ForOne(self,Func,):
