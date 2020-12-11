@@ -2,7 +2,7 @@
 Thumbs.db
 db.json
 *.log
-.ipynb_checkpoints/
+.ipynb_checkpoints
 shortcut
 0-test/models/
 0-test/weights/
