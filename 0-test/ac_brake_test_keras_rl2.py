@@ -47,11 +47,16 @@ dqn.compile(Adam(lr=1e-3), metrics=['mae'])
 # slows down training quite a lot. You can always safely abort the training prematurely using
 # Ctrl + C.
 history = dqn.fit(env, nb_steps=2000, visualize=False,
-                  verbose=2, callbacks=[WandbLogger()])
-
-# After training is done, we save the final weights.
-dqn.save_weights('weights/dqn_{}_weights.h5f'.format(
+                  verbose=2)#, callbacks=[WandbLogger()])
+#
+## After training is done, we save the final weights.
+dqn.save_weights('weights/dqn_{}_weights.h5'.format(
     ENV_NAME), overwrite=True)
+   
+dqn.load_weights('weights/dqn_{}_weights.h5'.format(
+   ENV_NAME))
+
+   
 
 # Finally, evaluate our algorithm for 5 episodes.
 history_test = dqn.test(env, nb_episodes=5, visualize=False)
