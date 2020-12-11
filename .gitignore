@@ -2,6 +2,9 @@
 Thumbs.db
 db.json
 *.log
-public/
-.deploy*/
-.ipynb_checkpoints/
+.ipynb_checkpoints
+shortcut
+0-test/models/
+0-test/weights/
+0-test/wandb/
+2-Framework

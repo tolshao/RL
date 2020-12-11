@@ -24,10 +24,12 @@ for i in range(300):
 time = np.arange(endtime+1)
 data_list = np.array(data_list)
 print(np.shape(data_list))
-yy = []
-for data in data_list[:, 0]:
-    yy.append(data[0])
-print('a')
-print('b')
-plt.plot(time, yy)
-plt.show()
+
+
+#yy = []
+#for data in data_list[:, 0]:
+#    yy.append(data[0])
+#print('a')
+#print('b')
+#plt.plot(time, yy)
+#plt.show()
