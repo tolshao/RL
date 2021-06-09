@@ -95,5 +95,5 @@ plt.xlabel('time')
 plt.ylabel('Reward')
 plt.legend(loc='upper right')
 
-plt.savefig('test.pdf')
+plt.savefig('FigAC2D.pdf')
 # plt.show()
